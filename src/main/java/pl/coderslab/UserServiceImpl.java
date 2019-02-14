@@ -2,6 +2,8 @@ package pl.coderslab;
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+import pl.coderslab.model.Role;
+import pl.coderslab.model.User;
 
 import java.util.Arrays;
 import java.util.HashSet;

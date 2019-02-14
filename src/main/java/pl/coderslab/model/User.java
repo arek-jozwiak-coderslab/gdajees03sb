@@ -1,4 +1,6 @@
-package pl.coderslab;
+package pl.coderslab.model;
+
+import pl.coderslab.model.Role;
 
 import javax.persistence.*;
 import java.util.Set;
