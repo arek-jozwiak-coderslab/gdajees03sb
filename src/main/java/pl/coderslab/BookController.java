@@ -9,6 +9,7 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import pl.coderslab.model.Book;
 
 
@@ -63,10 +64,12 @@ public class BookController {
     }
 
     @RequestMapping(value = "/book/add", method = RequestMethod.POST)
-    public String processForm(Model model, @Valid Book book, BindingResult result) {
+    public String processForm( @Valid Book book, BindingResult result,
+                              RedirectAttributes redirectAttributes) {
         if (result.hasErrors()) {
             return "book/add";
         }
+        redirectAttributes.addFlashAttribute("message", "dodany prawidłowo ");
         bookRepository.save(book);
         return "redirect:/book/list";
     }

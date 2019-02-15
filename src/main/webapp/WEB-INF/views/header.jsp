@@ -331,7 +331,11 @@
 
             </nav>
             <!-- End of Topbar -->
-
+            <c:if test="${not empty message}">
+            <div class="alert alert-success">
+                    ${message}
+            </div>
+            </c:if>
             <!-- Begin Page Content -->
             <div class="container-fluid">
 
